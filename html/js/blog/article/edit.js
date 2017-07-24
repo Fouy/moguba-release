@@ -18,14 +18,6 @@ $.validator.setDefaults({
     validClass: "help-block m-b-none"
 });
 
-// 以下为CKEditor编辑器初始化
-var config = {
-    extraPlugins: 'codesnippet',
-    codeSnippet_theme: 'zenburn',
-    height: 356
-};
-var editor = CKEDITOR.replace('content', config);
-
 // 以下为Toastr初始化
 toastr.options = {
     "closeButton": true,
@@ -45,6 +37,14 @@ toastr.options = {
 
 //以下为添加页面内容
 $().ready(function () {
+    // 以下为CKEditor编辑器初始化
+    var config = {
+        extraPlugins: 'codesnippet',
+        codeSnippet_theme: 'zenburn',
+        height: 356
+    };
+    var editor = CKEDITOR.replace('content', config);
+    
     // 增加校验
     var icon = "<i class='fa fa-times-circle'></i> ";
     $("#articleForm").validate({
